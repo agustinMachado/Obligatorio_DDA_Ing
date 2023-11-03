@@ -6,6 +6,8 @@ package Logica;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -15,6 +17,7 @@ import javax.persistence.Id;
 @Entity
 public class Usuario implements Serializable {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     private String nombre;
     private String apellido;
@@ -41,7 +44,7 @@ public class Usuario implements Serializable {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -49,7 +52,7 @@ public class Usuario implements Serializable {
     }
 
     public String getApellido() {
-        return apellido;
+        return this.apellido;
     }
 
     public void setApellido(String apellido) {
@@ -57,7 +60,7 @@ public class Usuario implements Serializable {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -65,7 +68,7 @@ public class Usuario implements Serializable {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {

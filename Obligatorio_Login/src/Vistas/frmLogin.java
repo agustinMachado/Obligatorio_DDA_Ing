@@ -18,8 +18,8 @@ public class frmLogin extends javax.swing.JDialog {
 
     public static frmRegistro fr;
     public static MenuPrincipal menu;
-    ConexionMySQL con = new ConexionMySQL();
-    Connection cn = con.conectar();
+    //ConexionMySQL con = new ConexionMySQL();
+    //Connection cn = con.conectar();
     
     public frmLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -155,26 +155,26 @@ public class frmLogin extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String usuario = txtUsuario.getText();
         String pass = txtPassword.getText();
-        if(!usuario.equals("")&&!pass.equals("")){
-            try{
-                PreparedStatement ps = cn.prepareStatement("SELECT id FROM usuarios WHERE email = '"+usuario+"' AND password='"+pass+"'");
-                ResultSet rs= ps.executeQuery();
-                if(rs.next()){
-                    int idUsuario = rs.getInt("id");
-                    if(idUsuario > 0){
-                        dispose();
-                        menu = new MenuPrincipal(null,true);
-                        menu.setVisible(true);
-                    } else{
-                            JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA llll");
-                    }
-                }
-            } catch(Exception e){
-                JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTOS");
-            }
-        } else{
-            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
-        }
+//        if(!usuario.equals("")&&!pass.equals("")){
+//            try{
+//                PreparedStatement ps = cn.prepareStatement("SELECT id FROM usuarios WHERE email = '"+usuario+"' AND password='"+pass+"'");
+//                ResultSet rs= ps.executeQuery();
+//                if(rs.next()){
+//                    int idUsuario = rs.getInt("id");
+//                    if(idUsuario > 0){
+//                        dispose();
+//                        menu = new MenuPrincipal(null,true);
+//                        menu.setVisible(true);
+//                    } else{
+//                            JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA llll");
+//                    }
+//                }
+//            } catch(Exception e){
+//                JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTOS");
+//            }
+//        } else{
+//            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
+//        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

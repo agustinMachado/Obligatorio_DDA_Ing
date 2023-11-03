@@ -5,14 +5,17 @@
 package Vistas;
 
 import Conexion.ConexionMySQL;
+import Logica.ControladoraLogica;
+import Logica.Usuario;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
 import java.sql.Connection; 
+import java.util.List;
 
 public class frmRegistro extends javax.swing.JDialog {
 
-    Conexion.ConexionMySQL con = new ConexionMySQL();
-    Connection cn = (Connection) con.conectar();
+    //Conexion.ConexionMySQL con = new ConexionMySQL();
+    //Connection cn = (Connection) con.conectar();
     
     public frmRegistro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -124,6 +127,8 @@ public class frmRegistro extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        ControladoraLogica controladora = new ControladoraLogica();
+        List<Usuario> usuarios = controladora.getListaUsuarios();
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
         String correo = txtEmail.getText();
@@ -132,26 +137,26 @@ public class frmRegistro extends javax.swing.JDialog {
         if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
         } else {
-            try {
-                String consulta = "INSERT INTO usuarios (nombre, apellido, email, password) VALUES (?, ?, ?, ?)";
-                PreparedStatement ps = cn.prepareStatement(consulta);
-                ps.setString(1, nombre);
-                ps.setString(2, apellido);
-                ps.setString(3, correo);
-                ps.setString(4, password);
-
-                int filasAfectadas = ps.executeUpdate();
-
-                if (filasAfectadas > 0) {
-                    limpiar();
-                    JOptionPane.showMessageDialog(null, "USUARIO GUARDADO CORRECTAMENTE");
-                } else {
-                    JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO");
+            Usuario usuarioNuevo = new Usuario();
+            usuarioNuevo.setNombre(nombre);
+            usuarioNuevo.setApellido(apellido);
+            usuarioNuevo.setEmail(correo);
+            usuarioNuevo.setPassword(password);
+            boolean usuarioYaCreado = false;
+            
+            for (Usuario usuario : usuarios) {
+                if (usuario.getEmail().equals(usuarioNuevo.getEmail())) {
+                    usuarioYaCreado = true;
                 }
+            }
 
-                ps.close();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+            if (usuarioYaCreado == true) {
+                JOptionPane.showMessageDialog(null, "Email utilizado, por favor utilize otro email!");
+            }
+            else {
+                controladora.crearUsuario(usuarioNuevo);
+                JOptionPane.showMessageDialog(null, "Usuario creado correctamente");
+                limpiar();
             }
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed

@@ -4,6 +4,8 @@
  */
 package obligatorio_login;
 
+import Persistencia.ControladoraPersistencia;
+
 /**
  *
  * @author Usuario
@@ -15,6 +17,7 @@ public class Obligatorio_Login {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //ControladoraPersistencia controlPersis = new ControladoraPersistencia();
     }
     
 }

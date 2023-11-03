@@ -12,17 +12,17 @@ import java.sql.DriverManager;
  * @author Usuario
  */
 public class ConexionMySQL {
-    Connection cn;
-    
-    public Connection conectar(){
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            cn=(Connection) DriverManager.getConnection("jdbc:mysql://localhost/obli_DDA_IngS","root","");
-            System.out.println("CONECTADO");
-        } catch (Exception ex){
-            System.out.println("ERROR DE CONEXION BD: " + ex);
-        }
-        
-        return cn;
-    }
+//    Connection cn;
+//    
+//    public Connection conectar(){
+//        try{
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            cn=(Connection) DriverManager.getConnection("jdbc:mysql://localhost/obli_DDA_IngS","root","");
+//            System.out.println("CONECTADO");
+//        } catch (Exception ex){
+//            System.out.println("ERROR DE CONEXION BD: " + ex);
+//        }
+//        
+//        return cn;
+//    }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 public class ControladoraLogica {
     ControladoraPersistencia CP = new ControladoraPersistencia();
     
-    public void crearAlumno(Usuario usu) {
+    public void crearUsuario(Usuario usu) {
         CP.crearUsuario(usu);
     }
     
