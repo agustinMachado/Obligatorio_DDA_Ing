@@ -4,7 +4,6 @@
  */
 package Vistas;
 
-import Conexion.ConexionMySQL;
 import Logica.ControladoraLogica;
 import Logica.Usuario;
 import javax.swing.JOptionPane;
@@ -13,9 +12,6 @@ import java.sql.Connection;
 import java.util.List;
 
 public class frmRegistro extends javax.swing.JDialog {
-
-    //Conexion.ConexionMySQL con = new ConexionMySQL();
-    //Connection cn = (Connection) con.conectar();
     
     public frmRegistro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
