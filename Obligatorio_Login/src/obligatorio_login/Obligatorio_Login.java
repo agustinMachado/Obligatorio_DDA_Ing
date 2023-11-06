@@ -5,6 +5,7 @@
 package obligatorio_login;
 
 import Persistencia.ControladoraPersistencia;
+import Vistas.MenuPrincipal;
 
 /**
  *
@@ -17,7 +18,8 @@ public class Obligatorio_Login {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //ControladoraPersistencia controlPersis = new ControladoraPersistencia();
+        ControladoraPersistencia controlPersis = new ControladoraPersistencia();
+        new MenuPrincipal().setVisible(true);
     }
     
 }
