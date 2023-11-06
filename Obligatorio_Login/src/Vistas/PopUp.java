@@ -113,8 +113,8 @@ public class PopUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUsarCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsarCartaActionPerformed
-//        ElegirColorFrame elegirColor = new ElegirColorFrame(this);
-//        colorDeclarado = elegirColor.colorElegido(manoJugador.get(decision));
+        ElegirColorFrame elegirColor = new ElegirColorFrame(this);
+        colorDeclarado = elegirColor.colorElegido(manoJugador.get(decision));
         
         if(colorDeclarado != null){
             

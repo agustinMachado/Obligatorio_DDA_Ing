@@ -76,7 +76,7 @@ public class Juego {
     }
     
     public ImageIcon GetImagenCartaSuperior() {
-        return new ImageIcon(this.colorValido + " - " + this.valorValido + ".png");
+        return new ImageIcon(this.colorValido + "_" + this.valorValido + ".png");
     }
     
     public boolean FinDelJuego() {

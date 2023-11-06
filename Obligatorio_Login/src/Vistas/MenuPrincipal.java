@@ -50,6 +50,11 @@ public class MenuPrincipal extends javax.swing.JDialog {
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("SALIR");
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 180, 40));
 
         btnVerEstadisticas.setBackground(new java.awt.Color(20, 7, 153));
@@ -57,6 +62,11 @@ public class MenuPrincipal extends javax.swing.JDialog {
         btnVerEstadisticas.setForeground(new java.awt.Color(255, 255, 255));
         btnVerEstadisticas.setText("MIS ESTADÍSTICAS");
         btnVerEstadisticas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnVerEstadisticas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerEstadisticasActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnVerEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 180, 40));
 
         btnJugadorMultijugador.setBackground(new java.awt.Color(169, 100, 4));
@@ -64,6 +74,11 @@ public class MenuPrincipal extends javax.swing.JDialog {
         btnJugadorMultijugador.setForeground(new java.awt.Color(255, 255, 255));
         btnJugadorMultijugador.setText("JUGAR MULTIJUGADOR");
         btnJugadorMultijugador.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnJugadorMultijugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJugadorMultijugadorActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnJugadorMultijugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 180, 40));
 
         btnJugarLocal.setBackground(new java.awt.Color(11, 139, 8));
@@ -71,6 +86,11 @@ public class MenuPrincipal extends javax.swing.JDialog {
         btnJugarLocal.setForeground(new java.awt.Color(255, 255, 255));
         btnJugarLocal.setText("JUGAR LOCAL");
         btnJugarLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnJugarLocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJugarLocalActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnJugarLocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 180, 40));
 
         logoUno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo.png"))); // NOI18N
@@ -92,6 +112,22 @@ public class MenuPrincipal extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnJugarLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarLocalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnJugarLocalActionPerformed
+
+    private void btnJugadorMultijugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorMultijugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnJugadorMultijugadorActionPerformed
+
+    private void btnVerEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEstadisticasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerEstadisticasActionPerformed
 
     /**
      * @param args the command line arguments

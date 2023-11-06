@@ -228,9 +228,13 @@ public class EtapaDeJuego extends javax.swing.JFrame
             }
         });
 
-        btnMazoCartaSuperior.setText("jButton18");
+        btnMazoCartaSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PNGs/small/Card_Back.png"))); // NOI18N
 
-        btnUltimaCartaTirada.setText("jButton19");
+        btnUltimaCartaTirada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUltimaCartaTiradaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -276,20 +280,20 @@ public class EtapaDeJuego extends javax.swing.JFrame
                                 .addGap(636, 636, 636)
                                 .addComponent(btnRobarCarta))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(52, 52, 52)
                         .addComponent(btnMazoCartaSuperior)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUltimaCartaTirada)))
+                        .addGap(51, 51, 51)
+                        .addComponent(btnUltimaCartaTirada, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnMazoCartaSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(btnUltimaCartaTirada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUltimaCartaTirada, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMazoCartaSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pidNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                     .addComponent(btnRobarCarta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -321,7 +325,7 @@ public class EtapaDeJuego extends javax.swing.JFrame
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
         );
 
         pack();
@@ -521,6 +525,10 @@ public class EtapaDeJuego extends javax.swing.JFrame
             ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void btnUltimaCartaTiradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUltimaCartaTiradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUltimaCartaTiradaActionPerformed
 
     /**
      * @param args the command line arguments
