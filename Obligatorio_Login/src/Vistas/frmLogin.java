@@ -19,12 +19,11 @@ import java.util.List;
 public class frmLogin extends javax.swing.JDialog {
 
     public static frmRegistro fr;
-    public static MenuPrincipal menu;
+    public static Menu menu;
     
     public frmLogin(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+        //super(parent, modal);
         initComponents();
-        setLocationRelativeTo(null);
     }
 
     /**
@@ -171,7 +170,7 @@ public class frmLogin extends javax.swing.JDialog {
         }
         
         if(usuarioEncontrado == true) {
-            menu = new MenuPrincipal(null, true);
+            menu = new Menu();
             menu.setVisible(true);
         }
         else {

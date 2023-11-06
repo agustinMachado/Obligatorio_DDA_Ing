@@ -119,6 +119,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
 
     private void btnJugarLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarLocalActionPerformed
         // TODO add your handling code here:
+        new Menu().setVisible(true);
     }//GEN-LAST:event_btnJugarLocalActionPerformed
 
     private void btnJugadorMultijugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorMultijugadorActionPerformed
