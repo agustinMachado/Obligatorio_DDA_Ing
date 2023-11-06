@@ -4,11 +4,13 @@
  */
 package Vistas;
 
-import Conexion.ConexionMySQL;
+import Logica.ControladoraLogica;
+import Logica.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import java.util.List;
 
 /**
  *
@@ -18,8 +20,6 @@ public class frmLogin extends javax.swing.JDialog {
 
     public static frmRegistro fr;
     public static MenuPrincipal menu;
-    //ConexionMySQL con = new ConexionMySQL();
-    //Connection cn = con.conectar();
     
     public frmLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -51,7 +51,7 @@ public class frmLogin extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel2.setText("USUARIO");
+        jLabel2.setText("EMAIL DE USUARIO");
 
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +86,25 @@ public class frmLogin extends javax.swing.JDialog {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addComponent(jLabel4)
+                                .addGap(33, 33, 33))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 73, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,21 +118,6 @@ public class frmLogin extends javax.swing.JDialog {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(159, 159, 159))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,29 +157,26 @@ public class frmLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ControladoraLogica controladora = new ControladoraLogica();
         String usuario = txtUsuario.getText();
         String pass = txtPassword.getText();
-//        if(!usuario.equals("")&&!pass.equals("")){
-//            try{
-//                PreparedStatement ps = cn.prepareStatement("SELECT id FROM usuarios WHERE email = '"+usuario+"' AND password='"+pass+"'");
-//                ResultSet rs= ps.executeQuery();
-//                if(rs.next()){
-//                    int idUsuario = rs.getInt("id");
-//                    if(idUsuario > 0){
-//                        dispose();
-//                        menu = new MenuPrincipal(null,true);
-//                        menu.setVisible(true);
-//                    } else{
-//                            JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA llll");
-//                    }
-//                }
-//            } catch(Exception e){
-//                JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTOS");
-//            }
-//        } else{
-//            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
-//        }
+        boolean usuarioEncontrado = false;
         
+        List<Usuario> usuarios = controladora.getListaUsuarios();
+        
+        for (Usuario usu : usuarios) {
+            if(usu.getEmail().equals(usuario) && usu.getPassword().equals(pass)) {
+                usuarioEncontrado = true;
+            }
+        }
+        
+        if(usuarioEncontrado == true) {
+            menu = new MenuPrincipal(null, true);
+            menu.setVisible(true);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Usuario no encontrado!");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
