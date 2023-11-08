@@ -52,9 +52,9 @@ public class EtapaDeJuego extends javax.swing.JFrame
          for(int i =0; i < idsCartas.size(); i++){
              botonesCartas.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PNGs/small/" + idsCartas.get(i) + ".png")));
          }
-         for(int i = 0; i < idsCartas.size(); i++){
-             botonesCartas.get(i).setIcon(null);
-         }
+//         for(int i = 0; i < idsCartas.size(); i++){
+//             botonesCartas.get(i).setIcon(null);
+//         }
      }
      
     public void populateArrayList() {
