@@ -22,6 +22,7 @@ public class Juego {
 
     public Juego(String[] idsJugadores) {
         this.mazo = new Mazo();
+        this.mazo.Resetear();
         this.mazo.Barajar();
         this.reserva = new ArrayList<Carta>();
         this.idsJugadores = idsJugadores;
@@ -220,7 +221,7 @@ public class Juego {
             id = this.idsJugadores[this.jugadorActual];
             GetManoJugador(id).add(this.mazo.RobaCarta());
             GetManoJugador(id).add(this.mazo.RobaCarta());
-            JLabel mensaje = new JLabel(id + "roba 2 cartas");
+            JLabel mensaje = new JLabel(id + " roba 2 cartas");
         }
         
         if(carta.getValor() == Valor.Wild_Four) {
@@ -229,11 +230,11 @@ public class Juego {
             GetManoJugador(id).add(this.mazo.RobaCarta());
             GetManoJugador(id).add(this.mazo.RobaCarta());
             GetManoJugador(id).add(this.mazo.RobaCarta());
-            JLabel mensaje = new JLabel(id + "roba 4 cartas");
+            JLabel mensaje = new JLabel(id + " roba 4 cartas");
         }
         
         if(carta.getValor() == Valor.Skip) {
-            JLabel mensaje = new JLabel(this.idsJugadores[this.jugadorActual] + "fue saltado");
+            JLabel mensaje = new JLabel(this.idsJugadores[this.jugadorActual] + " fue saltado");
             mensaje.setFont(new Font("Arial", Font.BOLD, 48));
             JOptionPane.showMessageDialog(null, mensaje);
             
@@ -250,7 +251,7 @@ public class Juego {
         }
         
         if(carta.getValor() == Valor.Reverse) {
-            JLabel mensaje = new JLabel(id + "cambio la direccion del juego!");
+            JLabel mensaje = new JLabel(id + " cambio la direccion del juego!");
             mensaje.setFont(new Font("Arial", Font.BOLD, 48));
             JOptionPane.showMessageDialog(null, mensaje);
             

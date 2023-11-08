@@ -9,6 +9,7 @@ import Logica.exceptions.InvalidValueSubmissionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class PopUp extends javax.swing.JFrame {
@@ -68,8 +69,6 @@ public class PopUp extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-
-        cartaLabel.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
