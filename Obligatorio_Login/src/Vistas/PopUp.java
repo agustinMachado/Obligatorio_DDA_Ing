@@ -69,8 +69,6 @@ public class PopUp extends javax.swing.JFrame {
             }
         });
 
-        cartaLabel.setText("jLabel1");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(

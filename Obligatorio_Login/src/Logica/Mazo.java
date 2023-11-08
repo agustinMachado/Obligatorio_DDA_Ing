@@ -62,7 +62,7 @@ public class Mazo {
         Random random = new Random();
         
         for (int i = 0; i < this.cartas.length; i++) {
-            int valorRandom = i + random.nextInt(n - 1);
+            int valorRandom = i + random.nextInt(n - i);
             Carta cartaRandom = this.cartas[valorRandom];
             this.cartas[valorRandom] = this.cartas[i];
             this.cartas[i] = cartaRandom;

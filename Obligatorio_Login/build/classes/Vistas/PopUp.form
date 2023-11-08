@@ -91,9 +91,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
